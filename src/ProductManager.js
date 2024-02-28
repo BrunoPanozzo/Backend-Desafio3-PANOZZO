@@ -189,7 +189,7 @@ module.exports = ProductManager
 
 // //testing de la clase "ProductManager"
 // testing = async () => {
-//     const productManager = new ProductManager('./Products.json')
+//     const productManager = new ProductManager('./products.json')
 
 //     await productManager.inicializar()
 //     let products = await productManager.getProducts()
