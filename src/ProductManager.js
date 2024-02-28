@@ -1,4 +1,3 @@
-
 const fs = require('fs')
 
 class ProductManager {
@@ -15,7 +14,7 @@ class ProductManager {
     inicializar = async () => {
         this.#products = await this.getProducts()
         ProductManager.#lastID_Product = this.#getHigherID()
-        console.log('Inicio ID de productos en ' + ProductManager.#lastID_Product)
+        // console.log('Inicio ID de productos en ' + ProductManager.#lastID_Product)
     }
 
     //métodos internos
