@@ -7,11 +7,14 @@ app.use(express.urlencoded({ extended: true }))
 const productManager = new ProductManager(`{ __dirname }/../products.json`)
 
 app.get('/products', async (req, res) => {
-    const { limit } = req.query    
+    const { limit } = req.query  
+    if (limit < 0) {
+        res.send([])
+    }  
     let products = await productManager.getProducts()
 
     const filteredProducts = limit
-        ? products.splice(0, limit)
+        ? products.slice(0, limit)
         : products
     res.send(filteredProducts)
 })
