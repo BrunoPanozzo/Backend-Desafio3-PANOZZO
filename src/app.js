@@ -10,6 +10,7 @@ app.get('/products', async (req, res) => {
     const { limit } = req.query  
     if (limit < 0) {
         res.send([])
+        return
     }  
     let products = await productManager.getProducts()
 
